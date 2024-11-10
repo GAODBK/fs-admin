@@ -1,0 +1,86 @@
+.TopRank {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.rank-list {
+  margin-top: 10px;
+
+  height: 451px;
+  float: left;
+  margin-left: 25px;
+  margin-right: 30px;
+  position: relative;
+  width: 330px;
+  z-index: 1;
+}
+.box-hd {
+  height: 45px;
+}
+.box-hd h3 {
+  font-size: 20px;
+  color: #494949;
+}
+/*表格部分*/
+.tb3 {
+  width: 100%;
+  margin-top: 5px;
+  /*border: #999999 solid 1px;*/
+  /*border-collapse:collapse ;*/
+  border-spacing: 10px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  box-shadow: 10px 10px 10px -4px rgba(0, 0, 0, 0.3);
+}
+.tb3 td {
+  /*border: 1px solid brown;*/
+  padding: 5px 0;
+}
+.tb3 td a {
+  /*border: 1px solid brown;*/
+  font-size: 16px;
+  color: #110f00;
+}
+.tb3 td a:hover {
+  /*border: 1px solid brown;*/
+  font-size: 16px;
+  color: red;
+}
+.tb3 th {
+  height: 70px;
+  padding: 10px 0;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.th_left_box {
+  text-align: left;
+  float: left;
+  height: 100%;
+  width: 60%;
+}
+.th_right {
+  float: right;
+  height: 100%;
+  width: 40%;
+}
+.th_right img {
+  height: 100%;
+  width: 100%;
+}
+.tb3 td:nth-child(1) {
+  background-color: rgba(153, 153, 153, 0.65);
+  text-align: center;
+  line-height: 14px;
+  width: 30px;
+}
+.tb3 td:nth-child(2) {
+  border-top: #999999 solid 1px;
+}
+.tb3 td:nth-child(3) {
+  color: #999999;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+}
