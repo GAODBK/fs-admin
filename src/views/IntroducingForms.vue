@@ -20,6 +20,9 @@ const addToCart = book => {
       shoppingQuantity: 1,
     })
 }
+
+const imgurl =
+  'https://raw.githubusercontent.com/GAODBK/fs-admin/refs/heads/vuetest/src/assets'
 </script>
 
 <template>
@@ -28,7 +31,7 @@ const addToCart = book => {
       <div class="blackWindow" @click.stop>
         <div class="btn" @click="closeTheIntroductionForm()"></div>
         <div class="left">
-          <img :src="`src/assets/${bookInformations.book_id}.jpg`" />
+          <img :src="`${imgurl}/${bookInformations.book_id}.jpg`" />
         </div>
 
         <div class="right">

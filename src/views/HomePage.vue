@@ -11,7 +11,7 @@ $bookStore.setRouteValue(route.path) // 假设路由参数名为 "value"
 
 // 监听路由更新
 onBeforeRouteUpdate(to => {
-  $bookStore.setRouteValue(to.path) // 在路由变化时更新Pinia的状态
+  $bookStore.setRouteValue(to.path.replace(/^\/fs-admin/, '')) // 在路由变化时更新Pinia的状态
 })
 
 const selectedProducts = inject('selectedProducts')
@@ -24,37 +24,37 @@ const selectedProducts = inject('selectedProducts')
       <div class="subnav">
         <ul>
           <li>
-            <RouterLink to="/foreignNovels"
+            <RouterLink to="/fs-admin/foreignNovels"
               >外国小说 <span> &gt; </span></RouterLink
             >
           </li>
           <li>
-            <RouterLink to="/ContemporaryChineseNovels"
+            <RouterLink to="/fs-admin/ContemporaryChineseNovels"
               >中国当代小说 <span> &gt; </span>
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/socialFiction"
+            <RouterLink to="/fs-admin/socialFiction"
               >社会小说 <span> &gt; </span>
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/detectiveNovel"
+            <RouterLink to="/fs-admin/detectiveNovel"
               >侦探/悬疑/推理小说 <span> &gt; </span>
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/scienceFiction"
+            <RouterLink to="/fs-admin/scienceFiction"
               >科幻小说 <span> &gt; </span>
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/primaryAndSecondarySchoolReading"
+            <RouterLink to="/fs-admin/primaryAndSecondarySchoolReading"
               >中小学阅读<span> &gt; </span>
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/collegeEntranceExaminationMaterials"
+            <RouterLink to="/fs-admin/collegeEntranceExaminationMaterials"
               >高考资料<span> &gt; </span>
             </RouterLink>
           </li>
@@ -75,7 +75,7 @@ const selectedProducts = inject('selectedProducts')
             <li v-if="selectedProducts.length === 0">您还没有添加任何商品</li>
           </ul>
 
-          <router-link to="/cart" class="more">全部商品</router-link>
+          <router-link to="/fs-admin/cart" class="more">全部商品</router-link>
         </div>
       </div>
     </div>

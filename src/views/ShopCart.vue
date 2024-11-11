@@ -33,6 +33,9 @@ const limitQuantity = products => {
 }
 
 const gotoHome = () => router.back()
+
+const imgurl =
+  'https://raw.githubusercontent.com/GAODBK/fs-admin/refs/heads/vuetest/src/assets'
 </script>
 
 <template>
@@ -60,7 +63,7 @@ const gotoHome = () => router.back()
         <div class="infoWrap" :class="{ shrinkAnimation: !item }">
           <div class="cartSection">
             <img
-              :src="`src/assets/${item.book_id}.jpg`"
+              :src="`${imgurl}/${item.book_id}.jpg`"
               alt=""
               class="itemImg"
             />

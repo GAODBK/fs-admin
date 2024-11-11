@@ -20,6 +20,9 @@ const goToCheck = item => {
 const colseFrom = () => {
   bookInformations.value = null
 }
+
+const imgurl =
+  'https://raw.githubusercontent.com/GAODBK/fs-admin/refs/heads/vuetest/src/assets/'
 </script>
 
 <template>
@@ -35,7 +38,7 @@ const colseFrom = () => {
             <a class="img_box">
               <img
                 loading="lazy"
-                :src="`src/assets/${item.book_id}.jpg`"
+                :src="`${imgurl}/${item.book_id}.jpg`"
                 alt=""
               />
             </a>
