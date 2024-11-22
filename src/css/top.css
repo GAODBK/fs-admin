@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.w {
+  width: 1200px;
+  margin: auto;
+}
+body {
+  background-color: #f3f5f7;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #e1251b;
+  cursor: pointer;
+}
+.clearfix:before,
+.clearfix:after {
+  content: '';
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  margin: 0 -10px;
+  zoom: 1;
+}
+
+.header {
+  height: 42px;
+  /* background-color: pink; */
+  /* 注意此地方会层叠 w 里面的margin */
+  margin: 30px auto;
+}
+.nav {
+  float: left;
+  margin-left: 60px;
+}
+.nav ul li {
+  float: left;
+  margin: 0 15px;
+}
+.nav ul li a {
+  display: block;
+  height: 42px;
+  padding: 0 10px;
+  line-height: 42px;
+  font-size: 18px;
+}
+.nav ul li a:hover {
+  border-bottom: 2px solid #00a4ff;
+  color: #00a4ff;
+}
+/* search搜索模块 */
+.search {
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.el-input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+  font-size: 14px;
+}
+
+.el-input::placeholder {
+  color: #c0c4cc;
+}
+
+.el-input:focus {
+  border-color: #409eff; /* Element Plus 主题色 */
+}
+
+.el-button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  background-color: #409eff; /* Element Plus 主题色 */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.el-button:hover {
+  background-color: #66b1ff; /* 悬停时变亮 */
+}
