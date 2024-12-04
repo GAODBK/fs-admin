@@ -4,9 +4,9 @@ import { inject } from 'vue'
 const props = defineProps(['bookInformations'])
 const emit = defineEmits(['colseFrom']) //, "addData"
 
-const selectedProducts = inject('selectedProducts')
-
 const closeTheIntroductionForm = () => emit('colseFrom')
+
+const selectedProducts = inject('selectedProducts')
 
 const addToCart = book => {
   if (!selectedProducts.find(Products => Products.book_id === book.book_id))
@@ -28,7 +28,7 @@ const addToCart = book => {
       <div class="blackWindow" @click.stop>
         <div class="btn" @click="closeTheIntroductionForm()"></div>
         <div class="left">
-          <img :src="`public/image/${bookInformations.book_id}.jpg`" />
+          <img :src="`/image/${bookInformations.book_id}.jpg`" />
         </div>
 
         <div class="right">

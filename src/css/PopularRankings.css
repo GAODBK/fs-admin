@@ -47,7 +47,6 @@
   color: red;
 }
 .tb3 th {
-  height: 70px;
   padding: 10px 0;
   grid-column-start: 1;
   grid-column-end: 4;

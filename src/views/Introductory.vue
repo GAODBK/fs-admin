@@ -10,17 +10,17 @@ let theFirst2 = ref([]);
 let theFirst3 = ref([]);
 
 onMounted(async () => {
-  const response1 = await fetch("/public/json/科幻.json");
+  const response1 = await fetch("/json/科幻.json");
   const data1 = await response1.json();
   books1.value = Object.values(data1).slice(10, 23);
   theFirst1.value = Object.values(data1)[3];
   
-  const response2 = await fetch("/public/json/经典.json");
+  const response2 = await fetch("/json/经典.json");
   const data2 = await response2.json();
   books2.value = Object.values(data2).slice(10, 23);
   theFirst2.value = Object.values(data2)[3];
   
-  const response3 = await fetch("/public/json/近代史.json");
+  const response3 = await fetch("/json/近代史.json");
   const data3 = await response3.json();
   books3.value = Object.values(data3).slice(10, 23);
   theFirst3.value = Object.values(data3)[3];
@@ -44,7 +44,7 @@ onMounted(async () => {
                   <span style="display: inline-block">仙侠·宅猪</span>
                 </div>
                 <div class="th_right">
-                  <img src="/public/image/Book2.png" />
+                  <img src="/image/Book2.png" />
                 </div>
               </th>
             </tr>
@@ -58,7 +58,7 @@ onMounted(async () => {
                   <h3>{{ theFirst1.avg_score }}分</h3>
                 </div>
                 <div class="th_right">
-                  <img :src="`/public/image/${theFirst1.name}.jpg`" />
+                  <img :src="`/image/${theFirst1.name}.jpg`" />
                 </div>
               </th>
             </tr>
@@ -85,7 +85,7 @@ onMounted(async () => {
                   <span style="display: inline-block">仙侠·宅猪</span>
                 </div>
                 <div class="th_right">
-                  <img src="/public/image/Book2.png" />
+                  <img src="/image/Book2.png" />
                 </div>
               </th>
             </tr>
@@ -99,7 +99,7 @@ onMounted(async () => {
                   <h3>{{ theFirst2.avg_score }}分</h3>
                 </div>
                 <div class="th_right">
-                  <img :src="`/public/image/${theFirst2.name}.jpg`" />
+                  <img :src="`/image/${theFirst2.name}.jpg`" />
                 </div>
               </th>
             </tr>
@@ -126,7 +126,7 @@ onMounted(async () => {
                   <span style="display: inline-block">仙侠·宅猪</span>
                 </div>
                 <div class="th_right">
-                  <img src="/public/image/Book2.png" />
+                  <img src="/image/Book2.png" />
                 </div>
               </th>
             </tr>
@@ -140,7 +140,7 @@ onMounted(async () => {
                   <h3>{{ theFirst3.avg_score }}分</h3>
                 </div>
                 <div class="th_right">
-                  <img src="/public/image/33.jpg" />
+                  <img src="/image/33.jpg" />
                 </div>
               </th>
             </tr>

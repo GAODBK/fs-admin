@@ -1,7 +1,7 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { useBookStore } from '@/stores/BookData'
-import pop from './IntroducingForms.vue'
+import pop from './Details.vue'
 
 const $bookStore = useBookStore()
 //函数直接解构
@@ -33,14 +33,14 @@ const colseFrom = () => {
             <a class="img_box">
               <img
                 loading="lazy"
-                :src="`/public/image/${item.book_id}.jpg`"
+                :src="`/image/${item.book_id}.jpg`"
                 alt=""
               />
             </a>
             <a class="review">{{ item.name }} ({{ item.introduction }})</a>
             <div class="appraise">书籍信息：{{ item.ISBN }}</div>
             <div class="upload_items_price">
-              <i>$</i>
+              <i>￥</i>
               <span>{{ item.price }}</span>
             </div>
           </div>
@@ -48,7 +48,7 @@ const colseFrom = () => {
         <li v-if="filterResults.length > 20">
           <div class="goodItem">
             <a class="img_box">
-              <img loading="lazy" src="/public/image/Book1.jpg" alt="" />
+              <img loading="lazy" src="/image/Book1.jpg" alt="" />
             </a>
             <a class="review"
               >人生海海（麦家重磅力作，莫言、董卿盛赞，连续两年高居畅销榜，发行量超200万册）</a

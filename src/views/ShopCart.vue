@@ -7,7 +7,7 @@ const selectedProducts = inject("selectedProducts");
 // 计算总价
 const calculateLumpSum = (products) =>
   parseFloat(
-    products
+    (products
       .reduce(
         (sum, item) =>
           sum +
@@ -15,7 +15,7 @@ const calculateLumpSum = (products) =>
             ? 0
             : item.shoppingQuantity * item.price),
         0
-      )
+      ) * 0.95)
       .toFixed(1)
   );
 
@@ -87,7 +87,7 @@ const settlementPrice = computed(() =>
         <div class="infoWrap">
           <div class="cartSection">
             <img
-              :src="`/public/image/${item.book_id}.jpg`"
+              :src="`/image/${item.book_id}.jpg`"
               alt=""
               class="itemImg"
             />
@@ -108,7 +108,7 @@ const settlementPrice = computed(() =>
                 v-model.number="item.shoppingQuantity"
                 @input="limitQuantity(item)"
               />
-              x ${{ item.price }}
+              x ￥{{ item.price }}
             </p>
             <p class="stockStatus" :class="{ out: item.inventoryQuantity }">
               {{ item.inventoryQuantity ? "有货" : "缺货" }}
@@ -116,7 +116,7 @@ const settlementPrice = computed(() =>
           </div>
 
           <div class="prodTotal cartSection">
-            <p>${{ (item.price * item.shoppingQuantity).toFixed(1) }}</p>
+            <p>￥{{ (item.price * item.shoppingQuantity).toFixed(1) }}</p>
           </div>
 
           <div class="cartSection removeWrap">
@@ -141,19 +141,19 @@ const settlementPrice = computed(() =>
       <ul>
         <li class="totalRow">
           <span class="label">小计 </span>
-          <span class="value"> ${{ lumpSum }} </span>
+          <span class="value"> ￥{{ lumpSum }} </span>
         </li>
         <li class="totalRow">
           <span class="label">运费 </span>
-          <span class="value"> ${{ calculateTotalQuantity }} </span>
+          <span class="value"> ￥{{ calculateTotalQuantity }} </span>
         </li>
         <li class="totalRow">
           <span class="label">税(超过40收税5%) </span>
-          <span class="value"> ${{ taxAmount }} </span>
+          <span class="value"> ￥{{ taxAmount }} </span>
         </li>
         <li class="totalRow final">
           <span class="label">总计</span>
-          <span class="value"> ${{ settlementPrice }} </span>
+          <span class="value"> ￥{{ settlementPrice }} </span>
         </li>
         <li class="totalRow"><a href="#" class="btn continue">去结算 </a></li>
       </ul>

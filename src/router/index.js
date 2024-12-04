@@ -11,8 +11,8 @@ const router = createRouter({
       children: [
         {
           path: '',
-          name: 'PopularRankings',
-          component: () => import('@/views/PopularRankings.vue'),
+          name: 'Introductory',
+          component: () => import('@/views/Introductory.vue'),
         },
         {
           path: '/:name',
