@@ -22,6 +22,7 @@ provide('selectedProducts', selectedProducts)
     <div class="nav">
       <ul>
         <li><RouterLink to="/">首页</RouterLink></li>
+        <li><a href="/src/CompressImages.html">图片压缩</a></li>
         <li>
           <RouterLink to="/WaterfallChart">图库收集</RouterLink>
         </li>
