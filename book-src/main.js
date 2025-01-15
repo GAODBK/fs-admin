@@ -1,4 +1,8 @@
-// import './css/top.css'
+import './css/top.css'
+import './css/pop.css'
+import './css/HomePage.css'
+import './css/Boutique.css'
+import './css/PopularRankings.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
