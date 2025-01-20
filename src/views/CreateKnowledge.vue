@@ -35,7 +35,7 @@ const closeSearchBox = () => {
         <div class="owner-section">
           <h4>新建至</h4>
           <div class="owner-selector">
-            <img src="" class="avatar" />
+            <img src="/svg/doctor.svg" class="avatar" />
             <span class="name">瑜浅</span>
             <i class="arrow-down"></i>
           </div>

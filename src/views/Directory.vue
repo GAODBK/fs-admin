@@ -1,11 +1,24 @@
 <script setup>
-import { useRouter } from 'vue-router';
+import { useRouter } from "vue-router";
 
 const router = useRouter();
 
 const handleJump = (path) => {
   router.push(path);
 };
+
+const tocItems = [
+  { text: "无标题文档", active: false },
+  { text: "先学会 TypeScript 装饰器！", active: false },
+  { text: "搭建你的首个Next.js 全栈框架项目", active: false },
+  { text: "配置scss全局变量", active: false },
+  { text: "prettier代码美化工具", active: false },
+  { text: "cors跨域处理", active: false },
+  { text: "npm install 建立安全的 TLS 连接", active: false },
+  { text: "JSFuck[]()!", active: false },
+  { text: "mockjs", active: true },
+  { text: "eslint", active: false },
+];
 </script>
 
 <template>
@@ -13,64 +26,40 @@ const handleJump = (path) => {
     <div class="sidebar">
       <div class="header">
         <a href="#" class="back-link">
-          <i class="back-icon">
-            <svg
-              class="icon"
-              style="
-                width: 1em;
-                height: 1em;
-                vertical-align: middle;
-                fill: currentColor;
-                overflow: hidden;
-              "
-              viewBox="0 0 1024 1024"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              p-id="3357"
-            >
-              <path
-                d="M631.04 161.941333a42.666667 42.666667 0 0 1 63.061333 57.386667l-2.474666 2.730667-289.962667 292.245333 289.706667 287.402667a42.666667 42.666667 0 0 1 2.730666 57.6l-2.474666 2.752a42.666667 42.666667 0 0 1-57.6 2.709333l-2.752-2.474667-320-317.44a42.666667 42.666667 0 0 1-2.709334-57.6l2.474667-2.752 320-322.56z"
-                fill="#111111"
-                p-id="3358"
-              ></path>
-            </svg>
-          </i>
+          <img src="/svg/back.svg" />
         </a>
         <div class="title">
-          <i class="doc-icon">📄</i>
+          <img class="doc-icon" src="/svg/juzi.svg" />
           <span>web 基础</span>
-          <i class="lock-icon">🔒</i>
         </div>
         <button class="add-btn">+</button>
       </div>
 
-      <nav class="nav-menu" @click="handleJump('/dashboard')">
-        <a href="#" class="nav-item">
-          <i class="home-icon">🏠</i>
+      <nav class="nav-menu">
+        <a href="#" class="nav-item" @click="handleJump('/dashboard')">
+          <img src="/svg/home.svg" class="home-icon" />
           <span>首页</span>
         </a>
 
         <div class="toc-section">
           <div class="toc-header">
-            <i class="list-icon">📑</i>
+            <img src="/svg/toc.svg" class="home-icon" />
             <span>目录</span>
             <div class="toc-actions">
-              <button class="expand-btn">⊕</button>
               <button class="more-btn">⋮</button>
             </div>
           </div>
 
           <ul class="toc-list">
-            <li class="toc-item">无标题文档</li>
-            <li class="toc-item">先学会 TypeScript 装饰器！</li>
-            <li class="toc-item">搭建你的首个Next.js 全栈框架项目</li>
-            <li class="toc-item">配置scss全局变量</li>
-            <li class="toc-item">prettier代码美化工具</li>
-            <li class="toc-item">cors跨域处理</li>
-            <li class="toc-item">npm install 建立安全的 TLS 连接</li>
-            <li class="toc-item">JSFuck[]()!</li>
-            <li class="toc-item active">mockjs</li>
-            <li class="toc-item">eslint</li>
+            <li
+              v-for="(item, index) in tocItems"
+              :key="index"
+              @click=""
+              class="toc-item"
+              :class="{ active: item.active }"
+            >
+              {{ item.text }}
+            </li>
           </ul>
         </div>
       </nav>
@@ -112,6 +101,14 @@ const handleJump = (path) => {
 .back-link {
   color: #666;
   text-decoration: none;
+  width: 1rem;
+  height: 1rem;
+  padding: 8px 3px;
+}
+
+.back-link:hover {
+  background: #e5e5e5;
+  border-radius: 5px;
 }
 
 .title {
@@ -123,6 +120,8 @@ const handleJump = (path) => {
 }
 
 .doc-icon {
+  width: 25px;
+  height: 25px;
   color: #4caf50;
 }
 
@@ -159,6 +158,10 @@ const handleJump = (path) => {
   text-decoration: none;
 }
 
+.nav-item:hover {
+  background: #f5f5f5;
+}
+
 .toc-section {
   margin-top: 8px;
 }
@@ -168,6 +171,10 @@ const handleJump = (path) => {
   align-items: center;
   padding: 8px 16px;
   gap: 8px;
+}
+
+.toc-header:hover {
+  cursor: pointer;
 }
 
 .toc-actions {
@@ -185,6 +192,12 @@ const handleJump = (path) => {
   padding: 2px;
 }
 
+.home-icon {
+  width: 24px;
+  height: 24px;
+  color: #666;
+}
+
 .toc-list {
   list-style: none;
   padding: 0;
@@ -192,19 +205,31 @@ const handleJump = (path) => {
 }
 
 .toc-item {
-  padding: 8px 16px 8px 40px;
+  padding: 8px 16px 8px 30px;
   font-size: 14px;
   color: #333;
+  width: 80%; /* 或者其他合适的宽度 */
   cursor: pointer;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: nowrap; /* 防止文本换行 */
 }
 
 .toc-item:hover {
-  background: #f5f5f5;
+  background: #e8f5e9;
+  color: #62bb65;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 .toc-item.active {
   background: #e8f5e9;
   color: #4caf50;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 @media (max-width: 900px) {

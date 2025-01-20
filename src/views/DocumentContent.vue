@@ -1,9 +1,18 @@
+<script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const handleJump = (path) => {
+  router.push(path);
+};
+</script>
 <template>
   <div class="doc-page">
     <!-- 顶部导航 -->
     <nav class="top-nav">
       <div class="nav-left">
-        <button class="menu-btn">☰</button>
+        <button class="menu-btn" @click="handleJump('/directory/')">☰</button>
         <div class="breadcrumb">
           <span>试题</span>
           <span class="separator">/</span>

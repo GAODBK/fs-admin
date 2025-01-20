@@ -11,6 +11,17 @@ const toggleSearchBox = () => {
 const handleClosePopup = () => {
   isRepository.value = false;
 };
+
+const gridItems = [
+  {
+    icon: "📄",
+    color: "blue-icon",
+    title: "试题",
+    subtitle: "复制格子的，标签",
+  },
+  { icon: "📚", color: "green-icon", title: "JAVA" },
+  { icon: "📊", color: "blue-icon", title: "数据库" },
+];
 </script>
 <template>
   <CreateKnowledge :isRepository @close="handleClosePopup()"/>
@@ -24,7 +35,9 @@ const handleClosePopup = () => {
       </div>
       <div class="nav-right">
         <button class="share-btn">分享</button>
-        <button class="more-btn">⋮</button>
+        <button class="more-btn">
+          <img class="doc-icon" src="/svg/more.svg" alt="更多图标" />
+        </button>
       </div>
     </nav>
 
@@ -48,9 +61,9 @@ const handleClosePopup = () => {
 
       <div class="recent-section">
         <h2>最近浏览</h2>
-        <div class="recent-items">
+        <div v-for="item in gridItems" :key="item.id">
           <div class="recent-item">
-            <i class="doc-icon">📄</i>
+            <img class="doc-icon" src="/svg/juzi.svg"/>
             <div class="item-info">
               <span class="item-title">java部分题</span>
               <span class="item-path">试题 / java部分题</span>
@@ -167,8 +180,11 @@ const handleClosePopup = () => {
   display: flex;
   align-items: center;
   padding: 12px;
+  margin-bottom: 10px;
   border-radius: 6px;
   cursor: pointer;
+  transition: background 0.3s;
+  border-bottom: 1px solid #f5f5f5;
 }
 
 .recent-item:hover {
@@ -176,7 +192,8 @@ const handleClosePopup = () => {
 }
 
 .doc-icon {
-  margin-right: 12px;
+  width: 50px;
+  height: 30px;
 }
 
 .item-info {

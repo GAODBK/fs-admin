@@ -197,7 +197,6 @@ ul li {
 
 .projTitle span {
   font-weight: normal;
-  font-style: italic;
   text-transform: lowercase;
   color: #777;
 }

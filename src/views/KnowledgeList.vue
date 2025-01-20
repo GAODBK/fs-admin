@@ -27,7 +27,9 @@ const gridItems = [
   <div class="knowledge-base">
     <div class="header">
       <h2>知识库</h2>
-      <button class="collapse-btn">收起 ^</button>
+      <button class="action-btn">
+        <img class="arrow-up-icon" src="/svg/arrow-up.svg" alt="收起图标" />
+      </button>
     </div>
 
     <div class="category">常用</div>
@@ -49,9 +51,15 @@ const gridItems = [
     <div class="section-header">
       <h2>我的知识库</h2>
       <div class="section-actions">
-        <button class="action-btn">+</button>
-        <button class="action-btn">^</button>
-        <button class="action-btn">⋮</button>
+        <button class="action-btn">
+          <img class="arrow-up-icon" src="/svg/add.svg" alt="收起图标" />
+        </button>
+        <button class="action-btn">
+          <img class="arrow-up-icon" src="/svg/arrow-up.svg" alt="收起图标" />
+        </button>
+        <button class="action-btn">
+          <img class="arrow-up-icon" src="/svg/more.svg" alt="收起图标" />
+        </button>
       </div>
     </div>
 
@@ -119,12 +127,18 @@ const gridItems = [
   gap: 8px;
 }
 
+.section-actions {
+  display: flex;
+  gap: 8px;
+}
+
 .action-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px 8px;
+  padding: 6px 12px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  background: #fff;
   color: #666;
+  cursor: pointer;
 }
 
 .section-header {
@@ -188,11 +202,6 @@ const gridItems = [
   border-bottom: none;
 }
 
-.title {
-  color: #333;
-  flex: 1;
-}
-
 .date {
   color: #999;
   font-size: 12px;
@@ -214,13 +223,6 @@ const gridItems = [
   font-size: 18px;
   color: #333;
   margin: 0;
-}
-
-.collapse-btn {
-  border: none;
-  background: none;
-  color: #666;
-  cursor: pointer;
 }
 
 .category {
@@ -260,6 +262,11 @@ const gridItems = [
   border-radius: 8px;
 }
 
+.arrow-up-icon {
+  width: 10px;
+  height: 15px;
+}
+
 .blue-icon {
   background-color: #e6f4ff;
   color: #1890ff;
@@ -277,7 +284,8 @@ const gridItems = [
 .title {
   font-size: 14px;
   color: #333;
-  max-width: 250px;
+  overflow: hidden;
+  max-width: 60%;
   margin-bottom: 4px;
   display: -webkit-box;
   -webkit-line-clamp: 1;

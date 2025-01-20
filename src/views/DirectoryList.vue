@@ -19,20 +19,22 @@ const handleJump = (path) => {
         <div class="right">
           <button class="btn-star">⭐ 收藏</button>
           <button class="btn-share">分享</button>
-          <button class="btn-more">...</button>
+          <button class="btn-more" @click="handleJump('/')">...</button>
         </div>
       </div>
 
       <div class="kb-stats">
         <span class="docs">49 文档</span>
         <span class="words">53470 字</span>
-        <span class="info-icon">ⓘ</span>
+        <span class="info icon">
+          <img src="/svg/info.svg" alt="信息图标" />
+        </span>
       </div>
     </header>
 
     <div class="kb-welcome">
       <div class="avatar">
-        <img src="" alt="用户头像" />
+        <img src="/svg/doctor.svg" alt="用户头像" />
       </div>
       <h2>👋 欢迎来到知识库</h2>
       <p>知识库就像书一样，让多篇文档结构化，方便知识的创作与沉淀</p>
@@ -41,11 +43,11 @@ const handleJump = (path) => {
     <div class="kb-content">
       <div class="article-list">
         <div class="article-item" @click="handleJump('/directory/java')">
-          <span class="title">java部分题</span>
+          <span class="title hidden">java部分题</span>
           <span class="date">2023-10-09 00:26</span>
         </div>
         <div class="article-item">
-          <span class="title">正则表达式提取短信验证码</span>
+          <span class="title hidden">正则表达式提取短信验证码</span>
           <span class="date">2024-05-29 22:40</span>
         </div>
         <!-- 其他文章项 -->
@@ -79,6 +81,11 @@ const handleJump = (path) => {
   gap: 8px;
 }
 
+.icon img {
+  width: 16px;
+  height: 18px;
+}
+
 .book-icon {
   font-size: 24px;
 }
@@ -86,7 +93,11 @@ const handleJump = (path) => {
 .title {
   font-size: 20px;
   font-weight: bold;
+}
+
+.hidden {
   max-width: 50%;
+  overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
